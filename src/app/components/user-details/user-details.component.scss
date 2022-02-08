@@ -1,0 +1,30 @@
+.user-details-container {
+  display: flex;
+
+  .photo {
+    img {
+      border: 1px solid #dadfe8;
+      border-radius: 50%;
+    }
+  }
+
+  .user-info {
+    display: flex;
+    flex-direction: column;
+
+    &-row {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 20px;
+
+      .label {
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+    }
+  }
+
+  .user-details-col {
+    width: 50%;
+  }
+}

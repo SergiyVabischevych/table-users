@@ -1,0 +1,32 @@
+<table class="table">
+  <thead class="table-head">
+    <th>Name</th>
+    <th>Last Name</th>
+    <th>Age</th>
+  </thead>
+  <tbody class="table-body">
+
+  <ng-container *ngIf="!users.length">
+    <tr class="table-row">
+      <td
+        colspan="3"
+        class="table-cell colspan"
+      >
+        No data to display
+      </td>
+    </tr>
+  </ng-container>
+
+    <ng-container *ngIf="users.length">
+      <tr
+        *ngFor="let user of users"
+        (click)="onSelectUser(user)"
+        class="table-row"
+      >
+        <td class="table-cell">{{ user.name }}</td>
+        <td class="table-cell">{{ user.last_name }}</td>
+        <td class="table-cell">{{ user.age }}</td>
+      </tr>
+    </ng-container>
+  </tbody>
+</table>

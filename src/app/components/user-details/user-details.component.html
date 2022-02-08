@@ -1,0 +1,19 @@
+<div class="user-details-container">
+  <div class="user-details-col photo">
+    <img [src]="user.image_url ? user.image_url : 'assets/img/no-photo.jpeg'" />
+  </div>
+  <div class="user-details-col user-info">
+    <div class="user-info-row">
+      <span class="label">Name:</span>
+      <span>{{ user.name }}</span>
+    </div>
+    <div class="user-info-row">
+      <span class="label">Last Name:</span>
+      <span>{{ user.last_name }}</span>
+    </div>
+    <div class="user-info-row">
+      <span class="label">Age:</span>
+      <span>{{ user.age }}</span>
+    </div>
+  </div>
+</div>

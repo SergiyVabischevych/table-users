@@ -1,0 +1,24 @@
+<div class="app-content">
+  <app-input-range
+    [value]="(totalUsers$ | async).totalUsers"
+    [disable]="isDataLoading$ | async"
+    (valueChanged)="onRangeValueChanged($event)"
+  ></app-input-range>
+
+  <app-table-users
+    [users]="(users$ | async).users"
+    (selectUser)="onSelectUser($event)"
+  ></app-table-users>
+
+  <div *ngIf="isDataLoading$ | async" class="footer">Loading...</div>
+  <div *ngIf="!(isDataLoading$ | async)" class="footer">
+    <strong>Total Users:</strong> {{ (totalUsers$ | async).totalUsers }}
+  </div>
+</div>
+
+<app-modal
+  *ngIf="selectedUser$ | async"
+  (closeModal)="onCloseModal()"
+>
+  <app-user-details [user]="selectedUser$ | async"></app-user-details>
+</app-modal>
